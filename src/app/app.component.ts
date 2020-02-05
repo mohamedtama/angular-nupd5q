@@ -57,11 +57,9 @@ export class AppComponent implements OnInit, AfterViewInit {
         if (newValue && typeof newValue === 'string') {
           this._dataService.loadAddressService(newValue).subscribe(
             result => {
-              console.log(result);
               result ? (this.values = result) : (this.values = []);
             },
             error => {
-              console.log(error);
               this.values = null;
             }
           );
