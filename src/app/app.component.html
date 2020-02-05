@@ -1,0 +1,11 @@
+<form [formGroup]="searchForm" class="example-form">
+	<mat-form-field class="example-full-width">
+		<input type="text" placeholder="Adresses" aria-label="Adresses" matInput formControlName="searchInput" [matAutocomplete]="auto">
+		<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+			<mat-option *ngFor="let value of values" [value]="value">
+				{{value.properties.label}}
+			</mat-option>
+		</mat-autocomplete>
+	</mat-form-field>
+	<p>Tableau de valeurs : {{ values | json}}</p>
+</form>
